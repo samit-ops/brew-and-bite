@@ -1,4 +1,6 @@
 "use client";
+
+import { formatPrice } from "@/lib/formatPrice";
 const loadRazorpay = () => {
   return new Promise((resolve) => {
     const script = document.createElement("script");
@@ -214,7 +216,7 @@ router.push(`/order/${json.data.orderNumber}`);
               {isSubmitting ? (
                 <> <div className="animate-spin w-5 h-5 border-2 border-brand-muted border-t-transparent rounded-full" /> Processing... </>
               ) : (
-                `Place Order — $${grandTotal}`
+                `Place Order — ${formatPrice(grandTotal)}`
               )}
             </button>
           </form>
@@ -232,7 +234,7 @@ router.push(`/order/${json.data.orderNumber}`);
                     <p className="text-sm text-brand-muted">Qty: {item.quantity}</p>
                   </div>
                   <div className="text-brand-amber font-medium">
-                    ${(item.price * item.quantity).toFixed(2)}
+                    {formatPrice(item.price * item.quantity)}
                   </div>
                 </div>
               ))}
@@ -241,11 +243,11 @@ router.push(`/order/${json.data.orderNumber}`);
             <div className="space-y-3 text-sm border-t border-brand-cream/10 pt-4 mb-4">
               <div className="flex justify-between text-brand-muted">
                 <span>Subtotal</span>
-                <span>${cartTotal.toFixed(2)}</span>
+                <span>{formatPrice(cartTotal)}</span>
               </div>
               <div className="flex justify-between text-brand-muted">
                 <span>Tax (8%)</span>
-                <span>${(cartTotal * 0.08).toFixed(2)}</span>
+                <span>{formatPrice(cartTotal * 0.08)}</span>
               </div>
               <div className="flex justify-between text-brand-muted">
                 <span>Delivery</span>
@@ -255,7 +257,9 @@ router.push(`/order/${json.data.orderNumber}`);
             
             <div className="flex justify-between items-center text-lg font-serif border-t border-brand-cream/10 pt-4">
               <span className="text-brand-cream">Total</span>
-              <span className="text-brand-amber text-2xl">${grandTotal}</span>
+              <span className="text-brand-amber text-2xl">
+  {formatPrice(grandTotal)}
+</span>
             </div>
           </div>
         </div>
