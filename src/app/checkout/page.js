@@ -172,7 +172,7 @@ router.push(`/order/${json.data.orderNumber}`);
                 value={formData.name}
                 onChange={handleInputChange}
                 className="w-full bg-brand-coffee/40 border border-brand-cream/10 rounded-xl px-4 py-3 text-brand-cream placeholder-brand-muted/50 focus:outline-none focus:border-brand-amber focus:ring-1 focus:ring-brand-amber transition-colors"
-                placeholder="Jane Doe"
+                placeholder="enter name"
               />
             </div>
             
@@ -186,7 +186,7 @@ router.push(`/order/${json.data.orderNumber}`);
                 value={formData.phone}
                 onChange={handleInputChange}
                 className="w-full bg-brand-coffee/40 border border-brand-cream/10 rounded-xl px-4 py-3 text-brand-cream placeholder-brand-muted/50 focus:outline-none focus:border-brand-amber focus:ring-1 focus:ring-brand-amber transition-colors"
-                placeholder="+1 (555) 000-0000"
+                placeholder="enter phone number"
               />
             </div>
 
@@ -200,7 +200,7 @@ router.push(`/order/${json.data.orderNumber}`);
                 value={formData.address}
                 onChange={handleInputChange}
                 className="w-full bg-brand-coffee/40 border border-brand-cream/10 rounded-xl px-4 py-3 text-brand-cream placeholder-brand-muted/50 focus:outline-none focus:border-brand-amber focus:ring-1 focus:ring-brand-amber transition-colors resize-none"
-                placeholder="123 Coffee Lane, Suite 4B..."
+                placeholder="enter address"
               ></textarea>
             </div>
             
