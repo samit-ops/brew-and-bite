@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-espresso: #1a0f0a;
+  --color-brand-coffee: #2c1a12;
+  --color-brand-mocha: #4a2e20;
+  --color-brand-amber: #d4a36a;
+  --color-brand-amber-dark: #9e5a2a;
+  --color-brand-cream: #fdfbf7;
+  --color-brand-muted: #a59a94;
+
+  --font-sans: "Inter", var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", var(--font-playfair), ui-serif, Georgia, serif;
+}
+
+:root {
+  --background: var(--color-brand-espresso);
+  --foreground: var(--color-brand-cream);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, .font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Glassmorphism Utilities */
+@layer utilities {
+  .glass-panel {
+    @apply bg-brand-coffee/60 backdrop-blur-md border border-brand-cream/10 rounded-2xl shadow-xl;
+  }
+  
+  .glass-panel-hover {
+    @apply transition-all duration-300 hover:bg-brand-coffee/80 hover:border-brand-amber/30 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-amber/10;
+  }
+  
+  .btn-primary {
+    @apply px-6 py-2 rounded-full bg-brand-amber text-brand-espresso font-semibold transition-all hover:bg-[#e6b67e] hover:scale-105 active:scale-95 shadow-md shadow-brand-amber/20;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-2 rounded-full border border-brand-amber/50 text-brand-amber font-semibold transition-all hover:bg-brand-amber/10 hover:border-brand-amber active:scale-95;
+  }
+}
+
+/* Animations */
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOutRight {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(100%); opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-brand-espresso);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-mocha);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-amber);
+}
+
+/* Base resets */
+* {
+  box-sizing: border-box;
+}
