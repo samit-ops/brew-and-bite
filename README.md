@@ -2,6 +2,9 @@
 # Brew & Bite
 
 Brew & Bite is a full-stack cafe ordering platform built with Next.js, MongoDB, Razorpay, and Firebase. The platform allows users to browse menu items, add products to their cart, place orders, and complete payments through an integrated checkout flow.
+##Live Demo
+
+https://brew-and-bite-weld.vercel.app
 
 ## Features
 
